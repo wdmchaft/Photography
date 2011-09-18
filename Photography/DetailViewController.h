@@ -1,4 +1,5 @@
 //
+
 //  DetailViewController.h
 //  Photography
 //
@@ -8,12 +9,38 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate>
+@interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate> {
+    
+    IBOutlet UILabel *sectionHeader;
+    IBOutlet UILabel *header;
+    IBOutlet UITextView *bodyText;
+    IBOutlet UIImageView *image;
+    IBOutlet UILabel *caption;
+    IBOutlet UIButton *smallerTextButton;
+    IBOutlet UIButton *biggerTextButton;
+    
+    
+}
+
+- (IBAction)smallerText:(id)sender;
+
+- (IBAction)biggerText:(id)sender;
+
+-(void)setPageWithHeader:(NSString *)headerText sectionHeader:(NSString *)sectionHeaderText
+                 caption:(NSString *)captionText andBody:(NSString *)body;
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 
 @property (nonatomic, retain) id detailItem;
 
 @property (nonatomic, retain) IBOutlet UILabel *detailDescriptionLabel;
+
+@property (nonatomic, retain) IBOutlet UILabel *sectionHeader;
+@property (nonatomic, retain) IBOutlet UILabel *header;
+@property (nonatomic, retain) IBOutlet UITextView *bodyText;
+@property (nonatomic, retain) IBOutlet UIImageView *image;
+@property (nonatomic, retain) IBOutlet UILabel *caption;
+@property (nonatomic, retain) IBOutlet UIButton *smallerTextButton;
+@property (nonatomic, retain) IBOutlet UIButton *biggerTextButton;
 
 @end

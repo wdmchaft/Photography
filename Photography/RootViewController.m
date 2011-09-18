@@ -16,30 +16,20 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [super viewDidLoad];    
+    Sec1 = [[NSArray alloc] initWithObjects:@"iPhone", @"iPod", @"iPad", @"Random Value", nil];
+    Sec2 = [[NSArray alloc] initWithObjects:@"iPhone", @"iPod", @"iPad 2", nil];
+    Sec3 = [[NSArray alloc] initWithObjects:@"iPhone", @"iPod", @"iPad 3", nil];
+    sectionTitles = [[NSArray alloc] initWithObjects:@"Intro", @"Concepts", @"Conclusion", nil];
     self.clearsSelectionOnViewWillAppear = NO;
-    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    self.contentSizeForViewInPopover = CGSizeMake(320.0, 500.0);
 }
 
-		
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
+-(DetailViewController *)dvc {
+    DetailViewController *dvc;
+    if(!dvc) 
+        dvc = [[DetailViewController alloc] init];
+    return dvc;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -48,18 +38,37 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 3;
     		
 }
 
 		
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
-    		
+    //Switch between sections to declare how many rows should be in each section
+    NSInteger rows;
+    switch (section) {
+        case 0:
+            rows = [Sec1 count];
+            break;
+        case 1:
+            rows = [Sec2 count];
+            break;
+        case 2:
+            rows = [Sec3 count];
+            break;
+        default:
+            break;
+    }
+    
+    return rows;    		
 }
 
-		
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    //Set the section titles
+	return [sectionTitles objectAtIndex:section];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -68,54 +77,28 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-
+    
+    //Check which section the row is in
+    if([indexPath section] == 0) 
+        cell.textLabel.text = [Sec1 objectAtIndex:[indexPath row]];
+    if([indexPath section] == 1) 
+        cell.textLabel.text = [Sec2 objectAtIndex:[indexPath row]];
+    if([indexPath section] == 2) 
+        cell.textLabel.text = [Sec3 objectAtIndex:[indexPath row]];
+    
     // Configure the cell.
-    		
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here -- for example, create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    DetailViewController *dvc = [[DetailViewController alloc] init];
+    [dvc setPageWithHeader:@"asdf" sectionHeader:@"asdf" caption:@"asdf" andBody:@"asdf"];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,12 +107,6 @@
     [super didReceiveMemoryWarning];
 
     // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload
-{
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
 }
 
 - (void)dealloc

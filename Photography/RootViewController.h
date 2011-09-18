@@ -10,8 +10,15 @@
 
 @class DetailViewController;
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController {
+    NSArray *Sec1;
+    NSArray *Sec2;
+    NSArray *Sec3;
+    NSArray *sectionTitles;
+}
 
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+
+
 
 @end

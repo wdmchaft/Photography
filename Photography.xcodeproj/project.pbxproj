@@ -41,21 +41,21 @@
 		B8B2DC241425954300B68BF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B8B2DC261425954300B68BF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B8B2DC281425954300B68BF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B8B2DC2C1425954300B68BF5 /* Photography-Info.plist */ = {isa = PBXFileReference; path = "Photography-Info.plist"; sourceTree = "<group>"; };
+		B8B2DC2C1425954300B68BF5 /* Photography-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Photography-Info.plist"; sourceTree = "<group>"; };
 		B8B2DC2E1425954300B68BF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B8B2DC301425954300B68BF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B8B2DC321425954300B68BF5 /* Photography-Prefix.pch */ = {isa = PBXFileReference; path = "Photography-Prefix.pch"; sourceTree = "<group>"; };
-		B8B2DC331425954300B68BF5 /* PhotographyAppDelegate.h */ = {isa = PBXFileReference; path = PhotographyAppDelegate.h; sourceTree = "<group>"; };
+		B8B2DC321425954300B68BF5 /* Photography-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Photography-Prefix.pch"; sourceTree = "<group>"; };
+		B8B2DC331425954300B68BF5 /* PhotographyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotographyAppDelegate.h; sourceTree = "<group>"; };
 		B8B2DC341425954300B68BF5 /* PhotographyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotographyAppDelegate.m; sourceTree = "<group>"; };
 		B8B2DC371425954300B68BF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		B8B2DC391425954300B68BF5 /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		B8B2DC391425954300B68BF5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B8B2DC3A1425954300B68BF5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B8B2DC3D1425954300B68BF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
-		B8B2DC3F1425954300B68BF5 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		B8B2DC3F1425954300B68BF5 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		B8B2DC401425954300B68BF5 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		B8B2DC471425954300B68BF5 /* PhotographyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotographyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B2DC481425954300B68BF5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		B8B2DC511425954300B68BF5 /* PhotographyTests-Info.plist */ = {isa = PBXFileReference; path = "PhotographyTests-Info.plist"; sourceTree = "<group>"; };
+		B8B2DC511425954300B68BF5 /* PhotographyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotographyTests-Info.plist"; sourceTree = "<group>"; };
 		B8B2DC531425954300B68BF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B8B2DC551425954300B68BF5 /* PhotographyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotographyTests.h; sourceTree = "<group>"; };
 		B8B2DC571425954300B68BF5 /* PhotographyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotographyTests.m; sourceTree = "<group>"; };
@@ -121,12 +121,12 @@
 			children = (
 				B8B2DC331425954300B68BF5 /* PhotographyAppDelegate.h */,
 				B8B2DC341425954300B68BF5 /* PhotographyAppDelegate.m */,
-				B8B2DC361425954300B68BF5 /* MainWindow.xib */,
 				B8B2DC391425954300B68BF5 /* DetailViewController.h */,
 				B8B2DC3A1425954300B68BF5 /* DetailViewController.m */,
-				B8B2DC3C1425954300B68BF5 /* DetailView.xib */,
 				B8B2DC3F1425954300B68BF5 /* RootViewController.h */,
 				B8B2DC401425954300B68BF5 /* RootViewController.m */,
+				B8B2DC361425954300B68BF5 /* MainWindow.xib */,
+				B8B2DC3C1425954300B68BF5 /* DetailView.xib */,
 				B8B2DC2B1425954300B68BF5 /* Supporting Files */,
 			);
 			path = Photography;

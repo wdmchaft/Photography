@@ -21,6 +21,7 @@
 @synthesize detailItem = _detailItem;
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;
 @synthesize popoverController = _myPopoverController;
+@synthesize sectionHeader, header, bodyText, image, caption, biggerTextButton, smallerTextButton;
 
 #pragma mark - Managing the detail item
 
@@ -36,48 +37,63 @@
         // Update the view.
         [self configureView];
     }
-
+    
     if (self.popoverController != nil) {
         [self.popoverController dismissPopoverAnimated:YES];
     }        
 }
 
+-(void)viewDidLoad {
+}
+
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
+    
     self.detailDescriptionLabel.text = [self.detailItem description];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    if (UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
+        smallerTextButton.center = CGPointMake(600, 700);
+        biggerTextButton.center = CGPointMake(630, 697);
+        
+    }
+    if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
+        smallerTextButton.center = CGPointMake(684, 950);
+        biggerTextButton.center = CGPointMake(711, 947);
+    }
     return YES;
+}
+-(void)setPageWithHeader:(NSString *)headerText sectionHeader:(NSString *)sectionHeaderText
+                 caption:(NSString *)captionText andBody:(NSString *)body{
+    [self print];
+    NSLog(@"setting page with %@", headerText);
+}
+
+-(void)print {
+    header.text = @"asdf";
+}
+
+- (IBAction)smallerText:(id)sender {
+    if(self.bodyText.font.pointSize > 20){
+        UIFont *newFont = [UIFont fontWithName:@"Georgia" size:self.bodyText.font.pointSize - 1];
+        bodyText.font = newFont;    
+    }
+}
+
+- (IBAction)biggerText:(id)sender {
+    if(self.bodyText.font.pointSize < 50){
+        UIFont *newFont = [UIFont fontWithName:@"Georgia" size:self.bodyText.font.pointSize + 1];
+        bodyText.font = newFont;  
+    }
 }
 
 #pragma mark - Split view support
 
 - (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController: (UIPopoverController *)pc
 {
-    barButtonItem.title = @"Events";
+    barButtonItem.title = @"Table of Contents";
     NSMutableArray *items = [[self.toolbar items] mutableCopy];
     [items insertObject:barButtonItem atIndex:0];
     [self.toolbar setItems:items animated:YES];
@@ -95,18 +111,27 @@
     self.popoverController = nil;
 }
 
-/*
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
- */
+
 
 - (void)viewDidUnload
 {
+    
+    [sectionHeader release];
+    self.sectionHeader = nil;
+    [header release];
+    self.header = nil;
+    [bodyText release];
+    self.bodyText = nil;
+    [image release];
+    self.image = nil;
+    [caption release];
+    self.caption = nil;
+    [smallerTextButton release];
+    self.smallerTextButton = nil;
+    [biggerTextButton release];
+    self.biggerTextButton = nil;
 	[super viewDidUnload];
-
+    
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 	self.popoverController = nil;
@@ -128,7 +153,15 @@
     [_toolbar release];
     [_detailItem release];
     [_detailDescriptionLabel release];
+    [sectionHeader release];
+    [header release];
+    [bodyText release];
+    [image release];
+    [caption release];
+    [smallerTextButton release];
+    [biggerTextButton release];
     [super dealloc];
 }
+
 
 @end
