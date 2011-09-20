@@ -17,13 +17,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];    
-    Sec1 = [[NSArray alloc] initWithObjects:@"iPhone", @"iPod", @"iPad", @"Random Value", nil];
+    Sec1 = [[NSArray alloc] initWithObjects:@"Introduction", @"Using a DSLR", @"Holding a DSLR", @"Anatomy", nil];
     Sec2 = [[NSArray alloc] initWithObjects:@"iPhone", @"iPod", @"iPad 2", nil];
     Sec3 = [[NSArray alloc] initWithObjects:@"iPhone", @"iPod", @"iPad 3", nil];
-    sectionTitles = [[NSArray alloc] initWithObjects:@"Intro", @"Concepts", @"Conclusion", nil];
+    sectionArray = [[NSArray alloc] initWithObjects:Sec1, Sec2, Sec3, nil];
+    sectionTitles = [[NSArray alloc] initWithObjects:@"Fundamentals", @"Concepts", @"Conclusion", nil];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 500.0);
 }
+
 
 -(DetailViewController *)dvc {
     DetailViewController *dvc;
@@ -45,22 +47,9 @@
 		
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //Switch between sections to declare how many rows should be in each section
+    //declare how many rows should be in each section
     NSInteger rows;
-    switch (section) {
-        case 0:
-            rows = [Sec1 count];
-            break;
-        case 1:
-            rows = [Sec2 count];
-            break;
-        case 2:
-            rows = [Sec3 count];
-            break;
-        default:
-            break;
-    }
-    
+    rows = [[sectionArray objectAtIndex:section] count];  
     return rows;    		
 }
 
@@ -78,14 +67,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    //Check which section the row is in
-    if([indexPath section] == 0) 
-        cell.textLabel.text = [Sec1 objectAtIndex:[indexPath row]];
-    if([indexPath section] == 1) 
-        cell.textLabel.text = [Sec2 objectAtIndex:[indexPath row]];
-    if([indexPath section] == 2) 
-        cell.textLabel.text = [Sec3 objectAtIndex:[indexPath row]];
-    
+    cell.textLabel.text = [[sectionArray objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
+
     // Configure the cell.
     cell.accessoryType = UITableViewCellAccessoryNone;
     
@@ -96,8 +79,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DetailViewController *dvc = [[DetailViewController alloc] init];
-    [dvc setPageWithHeader:@"asdf" sectionHeader:@"asdf" caption:@"asdf" andBody:@"asdf"];
+    NSString *header = [[NSString alloc] init];
+    header = [[sectionArray objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
     
+    [dvc setPageWithHeader:header sectionHeader:[sectionTitles objectAtIndex:indexPath.section] caption:@"asdf" andBody:@"asdf"];
+    [dvc release];
+    [header release];
     
 }
 
@@ -112,6 +99,11 @@
 - (void)dealloc
 {
     [detailViewController release];
+    [Sec1 release];
+    [Sec2 release];
+    [Sec3 release];
+    [sectionArray release];
+    [sectionTitles release];
     [super dealloc];
 }
 

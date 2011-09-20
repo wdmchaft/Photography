@@ -19,24 +19,20 @@
     IBOutlet UIButton *smallerTextButton;
     IBOutlet UIButton *biggerTextButton;
     
-    
 }
+-(void)setPageWithHeader:(NSString *)headerText sectionHeader:(NSString *)sectionHeaderText
+                 caption:(NSString *)captionText andBody:(NSString *)body;
 
 - (IBAction)smallerText:(id)sender;
 
 - (IBAction)biggerText:(id)sender;
 
--(void)setPageWithHeader:(NSString *)headerText sectionHeader:(NSString *)sectionHeaderText
-                 caption:(NSString *)captionText andBody:(NSString *)body;
-
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
-
 @property (nonatomic, retain) id detailItem;
-
 @property (nonatomic, retain) IBOutlet UILabel *detailDescriptionLabel;
 
 @property (nonatomic, retain) IBOutlet UILabel *sectionHeader;
-@property (nonatomic, retain) IBOutlet UILabel *header;
+@property (readwrite, retain) IBOutlet UILabel *header;
 @property (nonatomic, retain) IBOutlet UITextView *bodyText;
 @property (nonatomic, retain) IBOutlet UIImageView *image;
 @property (nonatomic, retain) IBOutlet UILabel *caption;

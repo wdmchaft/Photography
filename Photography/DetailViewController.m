@@ -11,11 +11,18 @@
 #import "RootViewController.h"
 
 @interface DetailViewController ()
+
+
 @property (nonatomic, retain) UIPopoverController *popoverController;
 - (void)configureView;
 @end
 
 @implementation DetailViewController
+static UILabel *sectionHeaderGlobal;
+static UILabel *headerGlobal;
+static UITextView *bodyTextGlobal;
+static UIImageView *imageGlobal;
+static UILabel *captionGlobal;
 
 @synthesize toolbar = _toolbar;
 @synthesize detailItem = _detailItem;
@@ -40,10 +47,22 @@
     
     if (self.popoverController != nil) {
         [self.popoverController dismissPopoverAnimated:YES];
-    }        
+    }     
+    
 }
 
 -(void)viewDidLoad {
+    sectionHeaderGlobal = [[UILabel alloc] init];
+    headerGlobal = [[UILabel alloc] init];
+    bodyTextGlobal = [[UITextView alloc] init];
+    imageGlobal = [[UIImageView alloc] init];
+    captionGlobal = [[UILabel alloc] init];
+    
+    sectionHeaderGlobal = sectionHeader;
+    headerGlobal = header;
+    bodyTextGlobal = bodyText;
+    imageGlobal = image;
+    captionGlobal = caption;
 }
 
 - (void)configureView
@@ -65,23 +84,25 @@
     }
     return YES;
 }
--(void)setPageWithHeader:(NSString *)headerText sectionHeader:(NSString *)sectionHeaderText
-                 caption:(NSString *)captionText andBody:(NSString *)body{
-    [self print];
-    NSLog(@"setting page with %@", headerText);
-}
 
--(void)print {
-    header.text = @"asdf";
+-(void)setPageWithHeader:(NSString *)headerText sectionHeader:(NSString *)sectionHeaderText
+                 caption:(NSString *)captionText andBody:(NSString *)body {
+    
+    //Set the page for what RootView sent
+    headerGlobal.text = headerText;
+    sectionHeaderGlobal.text = sectionHeaderText;
+    captionGlobal.text = captionText;
+    bodyTextGlobal.text = body;
+    
 }
 
 - (IBAction)smallerText:(id)sender {
     if(self.bodyText.font.pointSize > 20){
         UIFont *newFont = [UIFont fontWithName:@"Georgia" size:self.bodyText.font.pointSize - 1];
-        bodyText.font = newFont;    
+        bodyText.font = newFont;
     }
 }
-
+    
 - (IBAction)biggerText:(id)sender {
     if(self.bodyText.font.pointSize < 50){
         UIFont *newFont = [UIFont fontWithName:@"Georgia" size:self.bodyText.font.pointSize + 1];

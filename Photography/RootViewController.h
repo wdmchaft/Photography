@@ -11,6 +11,7 @@
 @class DetailViewController;
 
 @interface RootViewController : UITableViewController {
+    NSArray *sectionArray;
     NSArray *Sec1;
     NSArray *Sec2;
     NSArray *Sec3;
