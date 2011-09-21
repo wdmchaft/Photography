@@ -17,7 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];    
-    Sec1 = [[NSArray alloc] initWithObjects:@"Introduction", @"Using a DSLR", @"Holding a DSLR", @"Anatomy", nil];
+    Sec1 = [[NSArray alloc] initWithObjects:@"Introduction", @"Parts of a DSLR 1", @"Mode Dial", @"Holding a DSLR", @"Anatomy", nil];
     Sec2 = [[NSArray alloc] initWithObjects:@"iPhone", @"iPod", @"iPad 2", nil];
     Sec3 = [[NSArray alloc] initWithObjects:@"iPhone", @"iPod", @"iPad 3", nil];
     sectionArray = [[NSArray alloc] initWithObjects:Sec1, Sec2, Sec3, nil];
@@ -26,12 +26,11 @@
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 500.0);
 }
 
-
--(DetailViewController *)dvc {
-    DetailViewController *dvc;
-    if(!dvc) 
-        dvc = [[DetailViewController alloc] init];
-    return dvc;
+-(Resources*) resource {
+   // if (!resource) {
+        resource = [[Resources alloc] init];
+   // }
+    return resource;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -79,13 +78,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DetailViewController *dvc = [[DetailViewController alloc] init];
+    
     NSString *header = [[NSString alloc] init];
     header = [[sectionArray objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
     
-    [dvc setPageWithHeader:header sectionHeader:[sectionTitles objectAtIndex:indexPath.section] caption:@"asdf" andBody:@"asdf"];
-    [dvc release];
-    [header release];
+    NSString *body = [[NSString alloc] init];
+    body = [[[[self resource] textArray] objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
     
+    NSString *caption = [[NSString alloc] init];
+    caption = [[[[self resource] captionsArray] objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
+    
+    UIImage *image = [[UIImage alloc] init];
+    image = [[[[self resource] imageArray] objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
+    
+    [dvc setPageWithHeader:header sectionHeader:[sectionTitles objectAtIndex:indexPath.section] caption:caption image:image andBody:body];
+    
+    [resource release];
+    [dvc release];
+    [body release];
+    [image release];
+    [header release];
+    [caption release];
 }
 
 - (void)didReceiveMemoryWarning

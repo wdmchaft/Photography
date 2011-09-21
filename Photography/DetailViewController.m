@@ -86,13 +86,14 @@ static UILabel *captionGlobal;
 }
 
 -(void)setPageWithHeader:(NSString *)headerText sectionHeader:(NSString *)sectionHeaderText
-                 caption:(NSString *)captionText andBody:(NSString *)body {
+                 caption:(NSString *)captionText image:(UIImage *)imageImage andBody:(NSString *)body {
     
     //Set the page for what RootView sent
     headerGlobal.text = headerText;
     sectionHeaderGlobal.text = sectionHeaderText;
     captionGlobal.text = captionText;
     bodyTextGlobal.text = body;
+    imageGlobal.image = imageImage;
     
 }
 

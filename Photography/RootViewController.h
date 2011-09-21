@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Resources.h"
 
 @class DetailViewController;
 
@@ -16,10 +17,11 @@
     NSArray *Sec2;
     NSArray *Sec3;
     NSArray *sectionTitles;
+    Resources *resource;
 }
 
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 
-
+-(Resources *)resource;
 
 @end

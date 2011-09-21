@@ -21,7 +21,7 @@
     
 }
 -(void)setPageWithHeader:(NSString *)headerText sectionHeader:(NSString *)sectionHeaderText
-                 caption:(NSString *)captionText andBody:(NSString *)body;
+                 caption:(NSString *)captionText image:(UIImage *)imageImage andBody:(NSString *)body;
 
 - (IBAction)smallerText:(id)sender;
 

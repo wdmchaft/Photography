@@ -59,7 +59,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">Introduction</string>
+						<string key="IBUIText">Fundamentals</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Palatino-Italic</string>
 							<double key="NSSize">26</double>
@@ -87,7 +87,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">DSLR Photography</string>
+						<string key="IBUIText">Introduction</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Palatino-Bold</string>
 							<double key="NSSize">34</double>
@@ -105,7 +105,7 @@
 					<object class="IBUIImageView" id="172862643">
 						<reference key="NSNextResponder" ref="647120888"/>
 						<int key="NSvFlags">293</int>
-						<string key="NSFrame">{{230, 606}, {308, 207}}</string>
+						<string key="NSFrame">{{198, 565}, {374, 249}}</string>
 						<reference key="NSSuperview" ref="647120888"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="441090684"/>
@@ -113,11 +113,15 @@
 						<bool key="IBUIAutoresizesSubviews">NO</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">DSLR.png</string>
+						</object>
 					</object>
 					<object class="IBUITextView" id="336567076">
 						<reference key="NSNextResponder" ref="647120888"/>
 						<int key="NSvFlags">293</int>
-						<string key="NSFrame">{{102, 205}, {564, 346}}</string>
+						<string key="NSFrame">{{102, 205}, {564, 325}}</string>
 						<reference key="NSSuperview" ref="647120888"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="172862643"/>
@@ -131,9 +135,7 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
 						<bool key="IBUIEditable">NO</bool>
-						<object class="NSMutableString" key="IBUIText">
-							<characters key="NS.bytes">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</characters>
-						</object>
+						<string key="IBUIText">Congratulations on downloading this app!  Whether you are a newbie, wanting to learn the basics, or a dad who’s disappointed with the vacation photos, this app is a great place to begin.  Overall, you will learn things at a fairly slow pace, so you can absorb concepts.  However, if at any time, you feel the need to reread some text, or look at a caption, please do, as some things might become harder later.  Also having a usable DSLR is important, so as to practice your recently learned material.</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Georgia</string>
 							<double key="NSSize">23</double>
@@ -147,7 +149,7 @@
 					<object class="IBUILabel" id="441090684">
 						<reference key="NSNextResponder" ref="647120888"/>
 						<int key="NSvFlags">293</int>
-						<string key="NSFrame">{{222, 826}, {324, 35}}</string>
+						<string key="NSFrame">{{222, 826}, {324, 55}}</string>
 						<reference key="NSSuperview" ref="647120888"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="316886438"/>
@@ -157,7 +159,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">An extra long caption.</string>
+						<string key="IBUIText">A Canon Rebel DSLR.  Having a usable DSLR is important.</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Palatino-Italic</string>
 							<double key="NSSize">19</double>
@@ -167,6 +169,7 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
+						<int key="IBUINumberOfLines">2</int>
 						<int key="IBUITextAlignment">1</int>
 					</object>
 					<object class="IBUIToolbar" id="410698538">
@@ -614,6 +617,10 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">DSLR.png</string>
+			<string key="NS.object.0">{374, 249}</string>
+		</object>
 		<string key="IBCocoaTouchPluginVersion">534</string>
 	</data>
 </archive>

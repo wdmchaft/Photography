@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B870DDDE142952A400DFB697 /* modeDial.png in Resources */ = {isa = PBXBuildFile; fileRef = B870DDDD142952A400DFB697 /* modeDial.png */; };
+		B870DDE1142AA5CB00DFB697 /* parts.png in Resources */ = {isa = PBXBuildFile; fileRef = B870DDE0142AA5CB00DFB697 /* parts.png */; };
+		B896D72414283CF800F9909E /* DSLR.png in Resources */ = {isa = PBXBuildFile; fileRef = B896D72314283CF800F9909E /* DSLR.png */; };
+		B896D7271429441700F9909E /* Resources.m in Sources */ = {isa = PBXBuildFile; fileRef = B896D7261429441700F9909E /* Resources.m */; };
 		B8B2DC251425954300B68BF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B2DC241425954300B68BF5 /* UIKit.framework */; };
 		B8B2DC271425954300B68BF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B2DC261425954300B68BF5 /* Foundation.framework */; };
 		B8B2DC291425954300B68BF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B2DC281425954300B68BF5 /* CoreGraphics.framework */; };
@@ -37,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B870DDDD142952A400DFB697 /* modeDial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modeDial.png; sourceTree = "<group>"; };
+		B870DDE0142AA5CB00DFB697 /* parts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parts.png; sourceTree = "<group>"; };
+		B896D72314283CF800F9909E /* DSLR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSLR.png; sourceTree = "<group>"; };
+		B896D7251429441700F9909E /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
+		B896D7261429441700F9909E /* Resources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resources.m; sourceTree = "<group>"; };
 		B8B2DC201425954300B68BF5 /* Photography.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photography.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B2DC241425954300B68BF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B8B2DC261425954300B68BF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +95,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B896D72114283B4500F9909E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B870DDDD142952A400DFB697 /* modeDial.png */,
+				B896D72314283CF800F9909E /* DSLR.png */,
+				B870DDE0142AA5CB00DFB697 /* parts.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		B8B2DC151425954200B68BF5 = {
 			isa = PBXGroup;
 			children = (
@@ -119,12 +138,15 @@
 		B8B2DC2A1425954300B68BF5 /* Photography */ = {
 			isa = PBXGroup;
 			children = (
+				B896D72114283B4500F9909E /* Resources */,
 				B8B2DC331425954300B68BF5 /* PhotographyAppDelegate.h */,
 				B8B2DC341425954300B68BF5 /* PhotographyAppDelegate.m */,
 				B8B2DC391425954300B68BF5 /* DetailViewController.h */,
 				B8B2DC3A1425954300B68BF5 /* DetailViewController.m */,
 				B8B2DC3F1425954300B68BF5 /* RootViewController.h */,
 				B8B2DC401425954300B68BF5 /* RootViewController.m */,
+				B896D7251429441700F9909E /* Resources.h */,
+				B896D7261429441700F9909E /* Resources.m */,
 				B8B2DC361425954300B68BF5 /* MainWindow.xib */,
 				B8B2DC3C1425954300B68BF5 /* DetailView.xib */,
 				B8B2DC2B1425954300B68BF5 /* Supporting Files */,
@@ -232,6 +254,9 @@
 				B8B2DC2F1425954300B68BF5 /* InfoPlist.strings in Resources */,
 				B8B2DC381425954300B68BF5 /* MainWindow.xib in Resources */,
 				B8B2DC3E1425954300B68BF5 /* DetailView.xib in Resources */,
+				B896D72414283CF800F9909E /* DSLR.png in Resources */,
+				B870DDDE142952A400DFB697 /* modeDial.png in Resources */,
+				B870DDE1142AA5CB00DFB697 /* parts.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +296,7 @@
 				B8B2DC351425954300B68BF5 /* PhotographyAppDelegate.m in Sources */,
 				B8B2DC3B1425954300B68BF5 /* DetailViewController.m in Sources */,
 				B8B2DC411425954300B68BF5 /* RootViewController.m in Sources */,
+				B896D7271429441700F9909E /* Resources.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +477,7 @@
 				B8B2DC5D1425954300B68BF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8B2DC5E1425954300B68BF5 /* Build configuration list for PBXNativeTarget "PhotographyTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +486,7 @@
 				B8B2DC601425954300B68BF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
